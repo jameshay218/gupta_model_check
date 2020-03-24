@@ -1,3 +1,13 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# Crude implementation of model by Lourenço et al.
+
+<!-- badges: start -->
+
+<!-- badges: end -->
+
+``` r
 ## install.packages("deSolve")
 
 ## Define the set of ODEs for the model. Return such that we can solve with deSolve
@@ -60,7 +70,7 @@ results$susc <- 1 - results$z
 days_to_test <- as.integer(as.POSIXct("2020-03-03") - as.POSIXct("2020-01-27"))
 
 par(mfrow=c(2,1))
-plot(results[results$time <= days_to_test,c("time","z")], type='l',col="green",xlab="Time (days)", ylab="Per capita")
+plot(results[results$time <= days_to_test,c("time","z")], type='l',col="green",xlab="Time since seed (days)", ylab="Per capita")
 lines(results[results$time <= days_to_test,c("time","y")], col="red")
 lines(results[results$time <= days_to_test,c("time","susc")], col="blue")
 abline(v=days_to_test, lty=2)
@@ -69,6 +79,7 @@ legend("topleft", title="Key",
        col=c("red","green","blue"),
        lty=c(1,1,1))
 
-plot(results[results$time_deaths <= days_to_test, c("time_deaths","Dead")],type='l', xlab="Time (days)", ylab="Cumulative number of deaths",xlim=c(0,days_to_test))
+plot(results[results$time_deaths <= days_to_test, c("time_deaths","Dead")],type='l', xlab="Time since seed (days)", ylab="Cumulative number of deaths",xlim=c(0,days_to_test))
+```
 
-
+![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
