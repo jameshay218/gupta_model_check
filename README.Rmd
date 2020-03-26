@@ -12,7 +12,12 @@ knitr::opts_chunk$set(
 )
 ```
 
-# Crude implementation of model by Lourenço et al.
+# Implementation of model by Lourenço et al.
+
+Original paper here: https://www.dropbox.com/s/oxmu2rwsnhi9j9c/Draft-COVID-19-Model%20%2813%29.pdf?dl=0
+
+Note that you will also need to download the death data, amazingly compiled by JHU: https://github.com/CSSEGISandData/COVID-19
+
 
 <!-- badges: start -->
 <!-- badges: end -->

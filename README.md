@@ -1,7 +1,13 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# Crude implementation of model by Lourenço et al.
+# Implementation of model by Lourenço et al.
+
+Original paper here:
+<https://www.dropbox.com/s/oxmu2rwsnhi9j9c/Draft-COVID-19-Model%20%2813%29.pdf?dl=0>
+
+Note that you will also need to download the death data, amazingly
+compiled by JHU: <https://github.com/CSSEGISandData/COVID-19>
 
 <!-- badges: start -->
 
@@ -517,9 +523,8 @@ for(i in seq_along(samps)){
   prop_infected[i] <- res[res$time == "2020-03-19","z.N"]
 }
 print(paste0("Proportion immune: ", quantile(prop_infected,c(0.025,0.5, 0.975))*100))
-#> [1] "Proportion immune: 0.721015333021532"
-#> [2] "Proportion immune: 4.67018473341291" 
-#> [3] "Proportion immune: 56.5675987671221"
+#> [1] "Proportion immune: 0.71084860482293" "Proportion immune: 4.57972600696198"
+#> [3] "Proportion immune: 57.0114400637053"
 
 final_dat <- data.frame(rho=rhos,prop_infected=prop_infected)
 
